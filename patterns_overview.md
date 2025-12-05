@@ -1,64 +1,55 @@
 # Patterns Overview
 
-This document lists all **23 classic Design Patterns** as described by the *Gang of Four (GoF)*, grouped by category.
-Each entry includes a short, one-line description and a link to the corresponding example file.
+This document lists all **23 classic Design Patterns** from the *Gang of Four (GoF)*.
+Patterns are grouped by category and include:
 
-> ⚠️ **Note:**
-> Patterns are named using simple filenames like `strategy.py`, `observer.py`, etc.
-> Only implemented patterns link to real files. Others link to `missing_pattern.md`.
+* Description
+* Link to implementation (with folder structure)
+* **2025 Popularity Index (1–5 stars)** shown **below the pattern name**
+* **Modern Alternatives**
 
----
+**Note:** Popularity shown below each pattern reflects its **2025 relevance rating** (0–3 stars).
 
-## Creational Patterns
+# Creational Patterns
 
-| Pattern                                       | Description                                                                     |
-| --------------------------------------------- | ------------------------------------------------------------------------------- |
-| [**factory.py**](factory.py)                  | Creates objects without specifying the exact class to instantiate.              |
-| [**abstract_factory.py**](abstract_factory.py) | Produces families of related objects without specifying their concrete classes. |
-| [**builder.py**](builder.py)          | Separates the construction of a complex object from its representation.         |
-| [**prototype.py**](prototype.py)              | Creates new objects by copying existing ones (cloning).                         |
-| [**singleton.py**](singleton.py)              | Ensures a class has only one instance and provides a global access point.       |
-
----
-
-## Structural Patterns
-
-| Pattern                                | Description                                                                               |
-| -------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [**adapter.py**](adapter.py)           | Bridges incompatible interfaces so that classes can work together.                        |
-| [**bridge.py**](bridge.py)    | Separates an object’s abstraction from its implementation so they can vary independently. |
-| [**composite.py**](composite.py) | Composes objects into tree structures to represent part-whole hierarchies.                |
-| [**decorator.py**](decorator.py)       | Dynamically adds or modifies functionality of an object at runtime.                       |
-| [**facade.py**](facade.py)    | Provides a simplified interface to a larger body of code.                                 |
-| [**flyweight.py**](flyweight.py) | Reduces memory usage by sharing common data between similar objects.                      |
-| [**proxy.py**](proxy.py)     | Controls access to another object, often adding additional behavior.                      |
+| Pattern                                                                          | Description                                        | Modern Alternatives                  |
+| -------------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------ |
+| **[factory.py](creational/factory/factory.py)**<br>★★★                           | Creates objects without specifying concrete class. | Dependency Injection (DI) containers |
+| **[abstract_factory.py](creational/abstract_factory/abstract_factory.py)**<br>★★ | Produces families of related objects.              | DI frameworks, feature flags         |
+| **[builder.py](creational/builder/builder.py)**<br>★★★                           | Builds objects step-by-step.                       | Fluent interfaces, pydantic models   |
+| **[prototype.py](creational/prototype/prototype.py)**<br>★                       | Clones objects for fast creation.                  | Serialization frameworks, caching    |
+| **[singleton.py](creational/singleton/singleton.py)**<br>                        | One instance shared globally.                      | DI containers, global state managers |
 
 ---
 
-## Behavioral Patterns
+# Structural Patterns
 
-| Pattern                                              | Description                                                                               |
-| ---------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [**chain_of_responsibility.py**](chain_of_responsibility.py) | Passes requests along a chain of handlers until one processes it.                         |
-| [**command.py**](command.py)                 | Encapsulates a request as an object, allowing parameterization and queuing of operations. |
-| [**interpreter.py**](Interpreter.py)             | Defines a grammar and interpreter for a language or symbolic expressions.                 |
-| [**iterator.py**](iterator.py)                | Provides a way to access elements of a collection without exposing its structure.         |
-| [**mediator.py**](mediator.py)                | Defines an object that coordinates communication between multiple objects.                |
-| [**memento.py**](memento.py)                 | Captures and restores an object’s internal state without exposing details.                |
-| [**observer.py**](observer.py)                       | Allows objects to subscribe and react to events or state changes in another object.       |
-| [**state.py**](state.py)                   | Allows an object to alter its behavior when its internal state changes.                   |
-| [**strategy.py**](strategy.py)                | Defines a family of algorithms and makes them interchangeable at runtime.                 |
-| [**template_method.py**](template_method.py)         | Defines the skeleton of an algorithm, letting subclasses override certain steps.          |
-| [**visitor.py**](visitor.py)                 | Separates an algorithm from the objects it operates on for easier extension.              |
+| Pattern                                                      | Description                                  | Modern Alternatives                       |
+| ------------------------------------------------------------ | -------------------------------------------- | ----------------------------------------- |
+| **[adapter.py](structural/adapter/adapter.py)**<br>★★★       | Makes incompatible interfaces work together. | Wrapper classes, API gateways             |
+| **[bridge.py](structural/bridge/bridge.py)**<br>★            | Separates abstraction from implementation.   | Composition-first architectures           |
+| **[composite.py](structural/composite/composite.py)**<br>★★  | Part-whole hierarchies.                      | Component trees (React/Vue-like)          |
+| **[decorator.py](structural/decorator/decorator.py)**<br>★★★ | Adds behavior dynamically.                   | Middleware frameworks, AOP                |
+| **[facade.py](structural/facade/facade.py)**<br>★★           | Simplifies complex systems.                  | API gateway, SDK wrappers                 |
+| **[flyweight.py](structural/flyweight/flyweight.py)**<br>★   | Shares intrinsic state to reduce memory.     | Memory pooling, batching strategies       |
+| **[proxy.py](structural/proxy/proxy.py)**<br>★★★             | Controls access and may add behavior.        | Reverse proxies, decorators, service mesh |
 
 ---
 
-## Notes
+# Behavioral Patterns
 
-Each pattern includes:
+| Pattern                                                                                                | Description                                | Modern Alternatives                   |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------ | ------------------------------------- |
+| **[chain_of_responsibility.py](behavioral/chain_of_responsibility/chain_of_responsibility.py)**<br>★★★ | Passes request through handlers.           | Middleware stacks                     |
+| **[command.py](behavioral/command/command.py)**<br>★★                                                  | Encapsulates a request as an object.       | Event sourcing, CQRS                  |
+| **[interpreter.py](behavioral/interpreter/interpreter.py)**<br>★                                       | Grammar + interpreter for languages.       | ANTLR, LLM-assisted parsing           |
+| **[iterator.py](behavioral/iterator/iterator.py)**<br>★★                                               | Sequential access to collections.          | Python generators, async iterators    |
+| **[mediator.py](behavioral/mediator/mediator.py)**<br>★★★                                              | Central coordination of communication.     | Pub/sub, event buses                  |
+| **[memento.py](behavioral/memento/memento.py)**<br>★★                                                  | Saves and restores state.                  | Snapshots, versioning systems         |
+| **[observer.py](behavioral/observer/observer.py)**<br>★★★                                              | Reactive response to change.               | Reactive frameworks (signals, Rx)     |
+| **[state.py](behavioral/state/state.py)**<br>★★                                                        | Behavior changes with internal state.      | FSM libraries, rule engines           |
+| **[strategy.py](behavioral/strategy/strategy.py)**<br>★★★                                              | Interchangeable algorithms.                | Model registries, AI agent strategies |
+| **[template_method.py](behavioral/template_method/template_method.py)**<br>★★                          | Algorithm skeleton with overridable steps. | Hooks/callback systems                |
+| **[visitor.py](behavioral/visitor/visitor.py)**<br>★                                                   | Add operations without modifying objects.  | Pattern matching, dataclass visitors  |
 
-* A **Before Version** showing the old manual or repetitive approach.
-* A **Pattern Version** showing the improved structured solution.
-* Consistent **comments**, **example output**, and a short **history** in each file.
-
-> This overview serves as a reference and progress checklist as the repository expands to include all 23 patterns.
+---

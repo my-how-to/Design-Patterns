@@ -30,11 +30,6 @@ Every pattern pair follows this format:
 * **Commented Code:** clear, consistent style for all files.
 * **Example Output:** visible directly inside the script.
 
-> **Note:**
-> All files are stored in a single folder for simplicity.
-> Classification (Creational, Structural, Behavioral) is shown separately
-> in the [Patterns Overview](patterns_overview.md) file.
-
 ---
 
 ## Disclaimer
